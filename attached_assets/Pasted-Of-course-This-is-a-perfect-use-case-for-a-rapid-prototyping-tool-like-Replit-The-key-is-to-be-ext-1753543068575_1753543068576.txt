@@ -1,0 +1,86 @@
+Of course. This is a perfect use case for a rapid prototyping tool like Replit. The key is to be extremely specific about what the demo should do and, more importantly, what it should not do. The goal is a functional, visual mock-up, not a scalable application.
+
+Here is a clear, detailed prompt you can copy and paste directly into Replit's code generation feature.
+
+Prompt for Replit
+
+You are an expert Python developer specializing in rapid prototyping with the Streamlit library.
+
+Your task is to create a simple, single-file web application to demo the "Artisan Trend Spotter" dashboard. The entire application should be in one Python file (main.py).
+
+All data must be hard-coded inside the script. Do not use any external files, databases, or real web scraping. This is a visual demo only.
+
+Here are the detailed requirements:
+
+1. Application Title:
+The application should have a clear title at the top: "Artisan Trend Spotter" and a subtitle: "Internal Curation Team Dashboard".
+
+2. Hard-Coded Data:
+Use the following Python list of dictionaries as the source of truth. This data should be at the top of the script.
+
+Generated python
+trends_data = [
+    {
+        "name": "Mushroom Decor",
+        "velocity": 9.8,
+        "description": "A rising interest in fungi-inspired home goods, from lamps to textiles.",
+        "evidence": [
+            "The Hottest Home Trend Is Fungi-Inspired Decor - DesignDigest.com",
+            "Why Everyone is Buying Mushroom Lamps for a Whimsical Vibe - ApartmentInspo.net",
+            "Pinterest Trends Report shows 350% increase in searches for 'Mushroom Art'",
+            "Etsy Bestsellers: Hand-carved Wooden Mushroom Figurines"
+        ]
+    },
+    {
+        "name": "Checkered Patterns",
+        "velocity": 8.1,
+        "description": "The classic checkerboard pattern is seeing a major resurgence in rugs, blankets, and ceramics.",
+        "evidence": [
+            "Checkmate: The Enduring Appeal of the Checkerboard - StyleWeekly.com",
+            "TikTok #CheckeredRug hashtag surpasses 10 million views",
+            "Spotted: Checkered Patterns on ceramics at the NY Now Trade Show"
+        ]
+    },
+    {
+        "name": "Craft Cocktail Kits",
+        "velocity": 7.5,
+        "description": "DIY kits for creating unique, high-quality cocktails at home.",
+        "evidence": [
+            "The Rise of the Home Mixologist: Best Cocktail Kits of 2025 - GQ Magazine",
+            "Review: A kit for smoking your own cocktails at home - TheVerge.com",
+            "Internal Search Data: High search volume for 'cocktail smoker' and 'artisan bitters'"
+        ]
+    }
+]
+
+
+3. Application Flow & State Management:
+You must use st.session_state to manage which view the user is seeing (the main dashboard or a detailed trend view).
+
+Default View (Main Dashboard): When the app first loads, it should display the list of all trends.
+
+Detail View: When a user clicks a "View Details" button for a specific trend, the app should clear the dashboard view and show only the details for that selected trend. This view must also have a "← Back to Dashboard" button.
+
+4. Main Dashboard Layout:
+For each trend in the trends_data list, display the following in a neat layout:
+
+The trend name as a subheader (st.subheader).
+
+The trend's velocity score using st.metric. Label the metric "Trend Velocity".
+
+The trend's description.
+
+A "View Details" button (st.button). Use the trend's name as the key for the button to make it unique.
+
+5. Detail View Layout:
+When a user clicks "View Details", the screen should show:
+
+The trend name as a large header (st.header).
+
+A "← Back to Dashboard" button.
+
+A subheader that says "Supporting Evidence".
+
+An itemized list of the "evidence" strings for that trend. You can use st.info() or st.markdown() for each piece of evidence.
+
+Please generate the complete, single-file Python script named main.py that accomplishes this.
